@@ -1,0 +1,24 @@
+//色に関する変数群
+
+/*
+*カラーパレット
+*plt は paletteの略
+*/
+$plt-white: #fff;
+$plt-gray00: #fefefe;
+$plt-gray01: #f7f7f7;
+$plt-gray02: #dddddd;
+$plt-gray03: #c9c9c9;
+$plt-gray04: #b7b7b7;
+$plt-gray05: #a1a1a1;
+$plt-gray06: #898989;
+$plt-gray07: #727272;
+$plt-gray08: #595757;
+$plt-gray09: #383635;
+
+
+//カラーエリア
+$color-globalBody-bg: $plt-gray00;
+$color-globalHeader-bg: $plt-white;
+$color-globalFooter-bg: $plt-white;
+$color-globalBody-txt: $plt-gray08;

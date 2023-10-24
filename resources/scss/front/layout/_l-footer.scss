@@ -1,0 +1,6 @@
+@use "../global" as *;
+.l-footer{
+    background: {
+        color: $color-globalFooter-bg;
+    }
+}

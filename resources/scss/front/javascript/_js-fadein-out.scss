@@ -1,0 +1,33 @@
+@use "../global" as *;
+
+.js-campaign-pc__fadein{
+    @include pc{
+        display: block!important;
+        opacity: 1;
+        animation: displayNoneFadeIn 1s ease-out forwards;
+    }
+}
+@keyframes displayNoneFadeIn {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+@keyframes displayNoneFadeOut {
+    0% {
+        display: block;
+        opacity: 1;
+    }
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}

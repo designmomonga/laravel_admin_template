@@ -1,0 +1,17 @@
+//メディアクエリ mixin
+
+//ブレイクポイントを指定
+$pc: 960px;
+$tab: 600px;
+
+//メディアクエリ
+@mixin pc {
+    @media screen and (min-width: ($pc)) {
+        @content;
+    }
+}
+@mixin tab {
+    @media screen and (min-width: ($tab)) {
+        @content;
+    }
+}

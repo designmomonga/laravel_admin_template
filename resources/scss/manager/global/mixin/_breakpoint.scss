@@ -1,0 +1,32 @@
+//メディアクエリ mixin
+
+//ブレイクポイントを指定
+$pc: 960px;
+$tab: 600px;
+//ブレイクポイントを指定（デスクトップファースト）
+$df-sp: 599px;
+$df-tab: 959px;
+
+//メディアクエリ（モバイルファースト）
+@mixin pc {
+    @media screen and (min-width: ($pc)) {
+        @content;
+    }
+}
+@mixin tab {
+    @media screen and (min-width: ($tab)) {
+        @content;
+    }
+}
+
+//メディアクエリ（デスクトップファースト）
+@mixin df-tab{
+    @media screen and (max-width: ($df-tab)) {
+        @content;
+    }
+}
+@mixin df-sp{
+    @media screen and (min-width: ($df-sp)) {
+        @content;
+    }
+}

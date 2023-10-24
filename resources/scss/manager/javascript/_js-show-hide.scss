@@ -1,0 +1,21 @@
+@use "../global" as *;
+
+.js-show{
+    display: block!important;
+}
+.js-hide{
+    display: none!important;
+}
+.js-submenu__active{
+    @include pc{
+        a{
+            background-color: $plt-gray00!important;
+            &::before{
+                background-color: red!important;
+            }
+            &::after{
+                color: red!important;
+            }
+        }
+    }
+}

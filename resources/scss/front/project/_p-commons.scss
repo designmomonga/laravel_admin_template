@@ -1,0 +1,127 @@
+@use "../global" as *;
+
+//*----------------------------
+//余白調整
+//----------------------------*
+$spaceClass: true !default;
+$spacePadding: false !default;
+$endValue: 10 !default;
+
+@if $spaceClass {
+    @for $i from 0 through $endValue {
+        .mt#{$i * 5} {
+            margin-top: 5px * $i !important;
+        }
+        .mb#{$i * 5} {
+            margin-bottom: 5px * $i !important;
+        }
+        .mr#{$i * 5} {
+            margin-right: 5px * $i !important;
+        }
+        @if $spacePadding {
+            .pt#{$i * 5} {
+                padding-top: 5px * $i !important;
+            }
+            .pb#{$i * 5} {
+                padding-bottom: 5px * $i !important;
+            }
+        }
+    }
+}
+//*----------------------------
+//角丸
+//----------------------------*
+.bord-r3{
+    border-radius: 3px!important;
+}
+//*----------------------------
+//強調表示
+//----------------------------*
+strong{
+    font-weight: 700;
+}
+.hissu{
+    font-size:1.2rem;
+    font-weight: 700;
+}
+//*----------------------------
+//改行の表示非表示
+//----------------------------*
+.br-sp{
+    @include pc{
+        display: none;
+    }
+}
+//*----------------------------
+//テキスト位置
+//----------------------------*
+.txt-c{
+    text-align: center;
+}
+.txt-l{
+    text-align: left;
+}
+.txt-r{
+    text-align: right;
+}
+//*----------------------------
+//ログイン・新規ユーザー登録画面
+//----------------------------*
+.auth.wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: #f3f4f6;
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E");
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .p-iarea{
+        width: 90vw;
+        padding: 30px;
+        background-color: #f0f1f4;
+        line-height: 1.7;
+        @include pc{
+            width: 480px;
+            padding: 45px;
+        }
+        &__ttl{
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        &__read{
+            margin-bottom: 5px;
+        }
+    }
+    .p-ilist{
+        margin-top: 20px;
+        &__ttl{
+            margin-bottom: 5px;
+        }
+        &__input{
+            margin-bottom: 20px;
+        }
+    }
+    .p-link__reg{
+        margin-top: 30px;
+    }
+}
+//*----------------------------
+//エラーメッセージ
+//----------------------------*
+.p-err{
+    margin-top: 25px;
+    &__ttl{
+        color: #e81123;
+    }
+    ul{
+        margin-top: 1rem;
+        li{
+            color: #e81123;
+            &:not(:last-child){
+                padding-bottom: 3px;
+            }
+        }
+    }
+}

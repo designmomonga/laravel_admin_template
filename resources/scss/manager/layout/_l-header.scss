@@ -1,0 +1,102 @@
+@use "../global" as *;
+.l-header{
+    background: {
+        color:$color-globalHeader-bg;
+    }
+    position: sticky;
+    top: 0;
+    @include z-index(header);
+    @include pc{
+        z-index: 9999;
+    }
+    &__inner{
+        @include flex-setting(null, null, space-between, null, null);
+        height: $header-height-sp;
+        position: relative;
+        @include pc{
+            max-width: 95vw;
+            height: $header-height-pc;
+            margin: 0 auto;
+        }
+    }
+    &__sys-name{
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        @include pc{
+            font-size: 1.7rem;
+        }
+    }
+    &__info{
+        display: flex;
+        align-items: center;
+    }
+    &__profile{
+        height: 100%;
+        &--sp{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 100%;
+            background-color: #EEE;
+            cursor: pointer;
+            i{
+                font-size: 1.7rem;
+                color: #666;
+            }
+            @include pc{
+                display: none;
+            }
+        }
+        &--pc{
+            display: none;
+            @include pc{
+                display: flex;
+                align-items: center;
+                height: 100%;
+                color: #666;
+                cursor: pointer;
+                span{
+                    padding-top: 3px;
+                }
+                .user-icon{
+                    margin-right: 10px;
+                    font-size: 1.8rem;
+                }
+                .caret-down-icon{
+                    margin-left: 10px;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        &__menu{
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: -2.5vw;
+            min-width: 50vw;
+            background-color: #F2F2F2;
+            padding: 2rem;
+            @include pc{
+                min-width: 300px;
+            }
+            a{
+                color: $plt-gray08;
+                .arrow-right-form-bracket{
+                    margin-right: 7px;
+                    font-size: 1.7rem;
+                    vertical-align: middle;
+                    @include pc{
+                        font-size: 1.9rem;
+                    }
+                }
+                span{
+                    vertical-align: bottom;
+                }
+            }
+        }
+    }
+}

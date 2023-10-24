@@ -1,0 +1,59 @@
+@use "../global" as *;
+//*----------------------------
+//コンテナー
+//----------------------------*
+.l-container{
+    min-height: calc(100vh - ($header-height-sp + $footer-height-sp));
+    @include pc{
+        min-height: calc(100vh - ($header-height-pc + $footer-height-pc));
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .l-primary{
+        padding:2rem;
+        @include pc{
+            flex-grow: 1;
+            padding: 3rem;
+        }
+    }
+    .l-secondary{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        @include z-index(gnav);
+        width: 75vw;
+        height: 100vh;
+        background-color: $plt-gray01;
+        transition: left 0.6s;
+        &__inner{
+            padding: 70px 1.5rem 2rem 1.5rem;
+            height: 100%;
+            @include pc{
+                padding:3rem 0 3rem 3rem;
+                position: relative;
+            }
+        }
+        &.js-slide-active{
+            left: 0;
+        }
+        @include pc{
+            position:static;
+            width: 280px;
+            min-width: 280px;
+            height: inherit;
+            .cross-mark{
+                display: none;
+            }
+        }
+        .c-cross-mark{
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            @include z-index(crossmark);
+            @include pc{
+                display: none;
+            }
+        }
+    }
+
+}

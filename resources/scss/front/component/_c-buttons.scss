@@ -1,0 +1,115 @@
+@use "../global" as *;
+
+//submitボタン（HTML要素input type=button)
+button[type=submit].c-btn__submit{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    min-width: 150px;
+    height: 45px;
+    font-size: 1.4rem;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+//ボタンカラーバリエーション
+.c-btn__color--gray{
+    background-color: $plt-gray03;
+    color:  $plt-gray07;
+    &:hover{
+        background-color: $plt-gray02;
+    }
+}
+.c-btn__color--green{
+    background-color: #057b36;
+    color: #fff;
+    &:hover{
+        background-color: #21a859;
+    }
+}
+.c-btn__color--red{
+    background-color: #ef1843;
+    color: #fff;
+    &:hover{
+        background-color: #ed3f62;
+    }
+}
+.c-btn__color--blue{
+    background-color: #0067b8;
+    color: #fff;
+    &:hover{
+        background-color: #005da6;
+    }
+}
+.c-btn__color--laravel{
+    background-color: #ff2d20;
+    color: #FFF;
+    &:hover{
+        background-color: #fd5047;
+    }
+}
+
+//ハンバーガーメニュー
+.c-hbg{
+    &__body{
+        width:100%;
+        height:100%;
+        cursor:pointer;
+        background:none;
+        border:none;
+        background-color: rgba(255, 198, 198, 0.77);
+    }
+    &__line{
+        display:block;
+        width:45%;
+        height:3px;
+        margin:0 auto;
+        position:relative;
+        transition: all .4s;/*アニメーションの設定*/
+        border-radius: 20px;
+    }
+    &__line::before,
+    &__line::after{
+        content:"";
+        width:100%;
+        height:100%;
+        position:absolute;
+        transition: all .4s;/*アニメーションの設定*/
+        border-radius: 20px;
+    }
+    &__line::before{
+        transform:translateX(-50%) translateY(-8px);/* 上の線の位置 */
+    }
+    &__line::after{
+        transform:translateX(-50%) translateY(8px);/* 下の線の位置 */
+    }  
+}
+
+//閉ボタン（×）
+.cross-mark{
+    width: 30px;//ボタンの幅
+    height: 30px;//ボタンの高さ
+    &__body{
+        display: block;
+        position: relative;
+        width: 100%;
+        height: inherit;
+        cursor: pointer;
+    }
+    &__body::before, &__body::after{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1px;// 線の幅（太さ）
+        height: 30px;// 線の高さ
+        background: #666;//　線の色
+    }
+    &__body::before{
+        transform: translate(-50%,-50%) rotate(45deg);
+    }
+    &__body::after{
+        transform: translate(-50%,-50%) rotate(-45deg);
+    }
+}

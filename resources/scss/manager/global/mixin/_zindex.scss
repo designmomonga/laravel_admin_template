@@ -1,0 +1,16 @@
+//メディアクエリ mixin
+
+/*
+* z-indexの管理
+------------------------------------*/
+
+$layer: (
+  hamburger: 9999,
+  crossmark: 9999,
+  gnav: 9998,
+  header: 9997
+);
+
+@mixin z-index($key) {
+  z-index: map-get($layer, $key);
+}

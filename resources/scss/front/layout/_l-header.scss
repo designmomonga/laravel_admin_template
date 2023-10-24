@@ -1,0 +1,20 @@
+@use "../global" as *;
+.l-header{
+    background: {
+        color:$color-globalHeader-bg;
+    }
+    box-shadow: 0px 5px 17px -8px #d4d4d4;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    //border-bottom: 5px solid #f9f5e3;
+    &__inner{
+        @include flex-setting(null, null, space-between, null, null);
+        height: 52px;
+        @include pc{
+            max-width: 1200px;
+            height: 70px;
+            margin: 0 auto;
+        }
+    }
+}

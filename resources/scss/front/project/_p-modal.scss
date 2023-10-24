@@ -1,0 +1,110 @@
+@use "../global" as *;
+
+//モーダルウインドウの種別別設定
+//グローバルナビゲーション
+//外観のオーバーライド
+.p-gnavi{
+    .modal{
+        width:100%;
+        height:100%;
+        position:absolute;
+        top:0;
+        left:0;
+        display:none;
+        z-index:9999;
+        &__bg{
+            width: 100%;
+            height: 100%;
+            background:rgba(0,16,46,.9);
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        &__content{
+            width:80%;
+            background-color:rgba(0, 16, 46, 0);
+            position:absolute;
+            top:20px;
+            left:50%;
+            transform:translate(-50%,0);
+            @include pc{
+                top:50px;
+                max-width: 1200px;
+            }
+            &--inner{
+                position:relative;
+                padding: 50px 0px;
+                min-height: inherit;
+            }
+        }
+        &__cross-mark--position{
+            position:absolute;
+            top:30px;
+            right:0;
+        }
+    }
+    .cross-mark{
+        width: 30px;//ボタンの幅
+        height: 30px;//ボタンの高さ
+        &__body{
+            display: block;
+            position: relative;
+            width: 100%;
+            height: inherit;
+            cursor: pointer;
+        }
+        &__body::before, &__body::after{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1px;// 線の幅（太さ）
+            height: 30px;// 線の高さ
+            background: #ccc;//　線の色
+        }
+        &__body::before{
+            transform: translate(-50%,-50%) rotate(45deg);
+        }
+        &__body::after{
+            transform: translate(-50%,-50%) rotate(-45deg);
+        }
+    }
+}
+//グローバルナビのコンテンツエリア
+.p-gnavi-main{
+    color: #ccc;
+    a{
+        color:#CCC;
+    }
+    &__title{
+        text-align: center;
+        a img{
+            width: 150px;
+            @include pc{
+                width: 170px;
+            }
+        }
+    }
+    &__site-top{
+        text-align: center;
+        padding: 20px 0;
+    }
+    &__navi-wrap{
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__navi-box{
+        width: 48%;
+        margin-bottom: 25px;
+    }
+    &__navi-list{
+        line-height: 1.5;
+        margin-top: 15px;
+        li{
+            padding-bottom: 5px;
+            margin-top: 5px;
+        }
+    }
+}

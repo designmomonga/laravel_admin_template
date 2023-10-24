@@ -1,0 +1,274 @@
+@use "../global" as *;
+
+//*----------------------------
+//グローバルナビゲーション
+//----------------------------*
+.p-gnav{
+    & > ul {
+        & > li{
+            background-color: $plt-gray02;
+            @include pc{
+                &:hover{
+                    background-color: $plt-gray00;
+                    a{
+                        &::before{
+                            background-color: red;
+                        }
+                        &::after{
+                            color: red;
+                        }
+                    }
+                }
+            }
+            &:not(:last-child){
+                margin-bottom: 1px;
+            }
+            .c-accordion{
+                &__cross-line{
+                    @include pc{
+                        display: none;
+                    }
+                    right: 5px;
+                    &__body{
+                        &::before,
+                        &::after{
+                            background: $plt-gray06;
+                            height: 1px;
+                        }
+                    }
+                }
+            }
+            a{
+                display: flex;
+                width: 100%;
+                min-height: 45px;
+                align-items: center;
+                padding: 0 1rem;
+                color: $plt-gray08;
+            }
+        } 
+    }
+    &__current{
+        @include pc{
+            background-color: #FEE;
+            &::before{
+                background-color: red!important;
+            }
+            &::after{
+                color: red!important;
+            }
+        }
+    }
+    &__category{
+        a{
+            position: relative;
+            padding-left: 5rem!important;
+            span{
+                margin-top: 5px;
+            }
+            &::after{
+                display: none;
+            }
+            &::before{
+                content: "";
+                width: 3rem;
+                height: 3rem;
+                border-radius: 100%;
+                background: $plt-gray03;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            &::before,
+            i{
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                left: 2.5rem;
+                transform: translate(-50%,-50%);
+            }
+            i{
+                transform: translate(-50%,-55%);
+                font-size: 1.5rem;
+                color: $plt-gray01;
+            }
+            @include pc{
+                display: flex;
+                justify-content: space-between;
+                padding-left: 5rem!important;
+                min-height: 50px!important;
+                span{
+                    margin-top: 5px;
+                }
+                &::before{
+                    content: "";
+                    width: 3.4rem;
+                    height: 3.4rem;
+                    border-radius: 100%;
+                    background: $plt-gray03;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                &::before,
+                i{
+                    display: inline-block;
+                    position: absolute;
+                    top: 50%;
+                    left: 2.5rem;
+                    transform: translate(-50%,-50%);
+                }
+                i{
+                    transform: translate(-50%,-55%);
+                    font-size: 1.7rem;
+                    color: $plt-gray01;
+                }
+                &.p-angle--right::after{
+                    font-family: "Font Awesome 6 Free";
+                    font-weight: 900;
+                    display: inline-block;
+                    content: "\f105";
+                    color: $plt-gray05;
+                }
+            }
+        }
+    }
+    &__sub{
+        display: none;
+        &__inner{
+            & > ul{
+                background-color: $plt-gray02;
+                & > li{
+                    background-color: #FFF;
+                    &:not(:last-child){
+                        margin-bottom: 1px;
+                    }
+                    & > a{
+                        min-height: 40px;
+                    }
+                }
+            }
+        }
+        @include pc{
+            display: none;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 100%;
+            min-width: 260px;
+            background-color: #FFF;
+            padding:0;
+            &__inner{
+                position: absolute;
+                top: -2rem;
+                bottom: -2rem;
+                left: 0;
+                right: 0;
+                padding:5rem 0;
+                box-shadow: 8px 0px 14px -11px #c2c2c2;
+                & > ul{
+                    background-color: transparent;
+                    & > li{
+                        background-color: transparent;
+                        &:not(:last-child){
+                            margin-bottom: 1px;
+                        }
+                        & > a{
+                            min-height: 35px;
+                            padding: 2px 2rem 0;
+                            &:hover{
+                                background-color: $plt-gray01;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//*----------------------------
+//エラーメッセージ
+//----------------------------*
+.p-err{
+    margin-top: 20px;
+    padding: 2rem;
+    background-color: #FEE;
+    &__ttl{
+        color: #FFA5A5;
+    }
+    ul{
+        margin-top: 1rem;
+        li{
+            color: #FFA5A5;
+            &:not(:last-child){
+                padding-bottom: 3px;
+            }
+        }
+    }
+}
+
+//*----------------------------
+//余白調整
+//----------------------------*
+$spaceClass: true !default;
+$spacePadding: false !default;
+$endValue: 10 !default;
+
+@if $spaceClass {
+    @for $i from 0 through $endValue {
+        .mt#{$i * 5} {
+            margin-top: 5px * $i !important;
+        }
+        .mb#{$i * 5} {
+            margin-bottom: 5px * $i !important;
+        }
+        .mr#{$i * 5} {
+            margin-right: 5px * $i !important;
+        }
+        @if $spacePadding {
+            .pt#{$i * 5} {
+                padding-top: 5px * $i !important;
+            }
+            .pb#{$i * 5} {
+                padding-bottom: 5px * $i !important;
+            }
+        }
+    }
+}
+
+//*----------------------------
+//角丸
+//----------------------------*
+.bord-r3{
+    border-radius: 3px!important;
+}
+//*----------------------------
+//強調表示
+//----------------------------*
+strong{
+    font-weight: 700;
+}
+.hissu{
+    font-size:1.2rem;
+    font-weight: 700;
+}
+//*----------------------------
+//改行の表示非表示
+//----------------------------*
+.br-sp{
+    @include pc{
+        display: none;
+    }
+}
+//*----------------------------
+//テキスト位置
+//----------------------------*
+.txt-c{
+    text-align: center;
+}
+.txt-l{
+    text-align: left;
+}
+.txt-r{
+    text-align: right;
+}
+

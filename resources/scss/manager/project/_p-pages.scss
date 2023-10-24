@@ -1,0 +1,33 @@
+@use "../global" as *;
+
+/************************
+*各個別ページ
+**************************/
+
+//トップページ
+.m-index{
+    .p-page-header{
+        padding: 1rem 0 2rem 0;
+        @include pc{
+            font-size: 2.4rem;
+        }
+    }
+    .p-mv{
+        @include pc{
+            .c-content-panel{
+                min-height: 300px;
+            }
+        }
+    }
+    .p-column{
+        @include pc{
+            display: flex;
+            justify-content: space-between;
+            &__primary,
+            &__secondary
+            {
+                width: calc((100% - 10px) / 2);
+            }
+        }
+    }
+}

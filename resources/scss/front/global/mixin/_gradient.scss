@@ -1,0 +1,6 @@
+//グラデーションのmixin
+@use "../setting" as *;
+
+@mixin gradient($direction: 90deg, $color-1: $palette-nanohanaLightBlue, $color-2: $palette-nanohanaSkyBlue) {
+    background-image: linear-gradient($direction, $color-1 0%, $color-2 100%);
+}

@@ -1,0 +1,14 @@
+@use "../global" as *;
+
+//各ページのコンテンツを入れるパネルデザイン
+.c-content-panel{
+    padding: 1rem;
+    border: 1px solid #ececec;
+    background: #FFF;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

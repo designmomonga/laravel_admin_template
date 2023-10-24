@@ -1,0 +1,166 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*Lato*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+.ff-lato{
+	font-family: 'Lato', sans-serif;
+}
+/*Roboto Condensed*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+.ff-roboto-condensend{
+	font-family: 'Roboto Condensed', sans-serif;
+}
+/*Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.ff-roboto{
+	font-family: 'Roboto', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700,900&subset=japanese');
+.ff-noto-sans{
+	font-family: 'Noto Sans JP', sans-serif;
+}
+/*noto-serif（日本語明朝系）*/
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:200,300,400,500,600,700,900&subset=japanese');
+.ff-noto-serif{
+	font-family: 'Noto Serif JP', sans-serif;
+}
+/*Zen Antique（日本語明朝系）*/
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
+.ff-zenA{
+	font-family: 'Zen Antique', serif;
+}
+/*Oswald*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap');
+.ff-oswald{
+	font-family: 'Oswald', sans-serif;
+}
+/*Zen Maru Gothic（英語アルファベット）
+*https://fonts.google.com/specimen/Zen+Maru+Gothic?selection.family=Aoboshi+One|Cherry+Bomb+One|Chokokutai|Monomaniac+One|Slackside+One|Tsukimi+Rounded&subset=japanese
+*/
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
+.ff-zen-mg-300{
+	font-family: 'Zen Maru Gothic', sans-serif!important;
+	font-weight: 300!important;
+}
+.ff-zen-mg-400{
+	font-family: 'Zen Maru Gothic', sans-serif!important;
+	font-weight: 400!important;
+}
+.ff-zen-mg-500{
+	font-family: 'Zen Maru Gothic', sans-serif!important;
+	font-weight: 500!important;
+}
+/*Montserrat（英語アルファベット）
+*https://fonts.google.com/specimen/Montserrat
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+.ff-montserrat-100{
+	font-family: 'Montserrat', sans-serif!important;
+	font-weight: 100!important;
+}
+.ff-montserrat-200{
+	font-family: 'Montserrat', sans-serif!important;
+	font-weight: 200!important;
+}
+.ff-montserrat-300{
+	font-family: 'Montserrat', sans-serif!important;
+	font-weight: 300!important;
+}
+.ff-montserrat-400{
+	font-family: 'Montserrat', sans-serif!important;
+	font-weight: 400!important;
+}
+.ff-montserrat-500{
+	font-family: 'Montserrat', sans-serif!important;
+	font-weight: 500!important;
+}
+.ff-montserrat-600{
+	font-family: 'Montserrat', sans-serif!important;
+	font-weight: 600!important;
+}
+/*Bad Script（英語アルファベット）
+*https://fonts.google.com/specimen/Bad+Script
+*/
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+.ff-bad-script-400{
+	font-family: 'Bad Script', cursive!important;
+}
+/*Shippori Antique（日本語）
+*https://fonts.google.com/specimen/Shippori+Antique?subset=japanese
+*/
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap');
+.ff-Shippori-400{
+	font-family: 'Shippori Antique', sans-serif;
+}
+
+/**************************************
+*icomoon
+***************************************/
+@font-face {
+	font-family: 'icomoon';
+	src:  url('fonts/icomoon.eot?uek5gd');
+	src:  url('fonts/icomoon.eot?uek5gd#iefix') format('embedded-opentype'),
+	  url('fonts/icomoon.ttf?uek5gd') format('truetype'),
+	  url('fonts/icomoon.woff?uek5gd') format('woff'),
+	  url('fonts/icomoon.svg?uek5gd#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'icomoon' !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+  
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-home:before {
+	content: "\e900";
+  }
+  .icon-office:before {
+	content: "\e903";
+  }
+  .icon-phone:before {
+	content: "\e942";
+  }
+  .icon-envelop:before {
+	content: "\e945";
+  }
+  .icon-mobile:before {
+	content: "\e958";
+  }
+  .icon-bubble:before {
+	content: "\e96b";
+  }
+  .icon-bubbles:before {
+	content: "\e96c";
+  }
+  .icon-bubbles2:before {
+	content: "\e96d";
+  }
+  .icon-bubble2:before {
+	content: "\e96e";
+  }
+  .icon-bubbles3:before {
+	content: "\e96f";
+  }
+  .icon-bubbles4:before {
+	content: "\e970";
+  }
+  .icon-user-check:before {
+	content: "\e975";
+  }
+  .icon-user-tie:before {
+	content: "\e976";
+  }
+  

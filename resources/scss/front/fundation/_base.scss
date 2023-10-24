@@ -1,0 +1,88 @@
+@use "../global" as *;
+/*
+*初期設定
+-----------------------------------------*/
+*{
+    box-sizing:border-box;
+}
+html{
+    font-size:62.5%;/*rem単位の採用の為、ブラウザデフォルト文字サイズを10pxに指定*/
+}
+body{
+    background-color: $color-globalBody-bg;
+	font: {
+        family: $base_font;
+        size: 1.4rem;
+    }
+    color: $color-globalBody-txt;
+    @include tab{
+        font: {
+            size: 1.5rem;
+        }
+    }
+    @include pc{
+        font: {
+            size: 1.5rem;
+        }
+    }
+}
+video,
+img{
+    max-width: 100%;
+    vertical-align: bottom;/*画像下のディセンダ対策*/
+}
+a{
+    text-decoration: none;
+}
+ul,ol{
+    list-style-type: none;/*リストの行頭文字を非表示*/
+}
+main{
+    min-height: 60vh;
+    line-height: 1.5;
+}
+/*----------------------------
+* フォーム Default
+*----------------------------*/
+textarea,
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid #DFDFDF;
+  }
+  textarea {
+    min-height: 200px;
+  }
+  .pw__wrap{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    #buttonEye{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        //background-color: #DFDFDF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #666;
+    }
+    input[type=password],
+    input[type=text]
+    {
+        padding-right: 45px;
+    }
+  }
+  ::placeholder {
+    color: #999;
+  }
+  //↓Microsoft Edgeのinput type=password においてデフォルトで表示される文字表示ボタンを非表示にする
+  ::-ms-reveal {
+    display: none;
+}
