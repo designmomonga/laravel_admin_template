@@ -21,10 +21,13 @@ Route::get('/sample', function () {
     return view('sample');
 });
 
-//Route::get('/front', \App\Http\Controllers\Fronts\IndexController::class)->name('front.index');
+Route::get('/front', \App\Http\Controllers\Fronts\IndexController::class)->name('front.index');
 //Route::get('/front/regist', \App\Http\Controllers\Fronts\RegisterController::class)->name('front.regist');
 
 Route::group(['middleware' => ['auth']], function() {
-    // your routes
-    Route::get('/manager', [\App\Http\Controllers\Manager\indexController::class, 'index']);
+    Route::get('/admin', [\App\Http\Controllers\Admin\indexController::class, 'index'])->name('admin.home');
+    //↓管理者権限以上のユーザーに制限するルーティング
+    Route::group(['middleware' => ['can:admin-higher']], function() {
+        Route::get('/admin/users', \App\Http\Controllers\Admin\Users\indexController::class)->name('admin.user.home');
+    });
 });

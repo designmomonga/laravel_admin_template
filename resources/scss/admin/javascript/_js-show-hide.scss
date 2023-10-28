@@ -11,10 +11,10 @@
         a{
             background-color: $plt-gray00!important;
             &::before{
-                background-color: red!important;
+                background-color: $color-accent-main!important;
             }
             &::after{
-                color: red!important;
+                color: $color-accent-main!important;
             }
         }
     }

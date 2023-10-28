@@ -13,6 +13,19 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
+     * ユーザーに関連するロール情報を取得
+     */
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    public function getRoleName()
+    {
+        return $this->role->role_name;
+    }
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>

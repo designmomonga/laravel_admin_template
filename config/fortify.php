@@ -75,7 +75,7 @@ return [
     */
 
     //'home' => RouteServiceProvider::HOME,
-    'home' => '/manager',
+    'home' => '/admin',
 
     /*
     |--------------------------------------------------------------------------
@@ -146,7 +146,7 @@ return [
     */
 
     'features' => [
-        Features::registration(),
+        //Features::registration(),
         Features::resetPasswords(),
         Features::emailVerification(),
         //Features::updateProfileInformation(),
@@ -156,6 +156,10 @@ return [
         //     'confirmPassword' => true,
         //     // 'window' => 0,
         // ]),
+    ],
+
+    'redirects' => [
+        'logout' => config('app.url') . '/admin/login',//ログアウト後の遷移先
     ],
 
 ];

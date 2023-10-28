@@ -79,9 +79,71 @@
             right: -2.5vw;
             min-width: 50vw;
             background-color: #F2F2F2;
-            padding: 2rem;
+            padding: 2rem 0;
             @include pc{
                 min-width: 300px;
+                padding: 2rem 0;
+            }
+            dl{
+                margin-bottom: 1rem;
+                padding: 0 2rem;
+                dt,dd{
+                    display: inline-block;
+                    color: $plt-gray05;
+                }
+                dt{
+                    margin-right: 3px;
+                    &::after{
+                        content: "：";
+                    }
+                }
+            }
+            ul{
+                li{
+                    min-height: 35px;
+                    @include pc{
+                        min-height: 30px;
+                    }
+                    a{
+                        display: flex;
+                        min-height: inherit;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 0 2rem;
+                        span{
+                            padding-top: 3px;
+                        }
+                        &:hover{
+                            background-color: $plt-gray01;
+                            &::after{
+                                color: $color-accent-main;
+                            }
+                        }
+                        &::after{
+                            font-family: "Font Awesome 6 Free";
+                            font-weight: 900;
+                            display: inline-block;
+                            content: "\f105";
+                        }
+                        &.l-logout{
+                            justify-content: flex-start;
+                            &::before{
+                                font-family: "Font Awesome 6 Free";
+                                font-weight: 900;
+                                font-size: 1.8rem;
+                                display: inline-block;
+                                content: "\f08b";
+                                margin-right: 7px;
+                            }
+                            &::after{
+                                display: none;
+                            }
+                            span{
+                                padding-top: 3px;
+                            }
+                        }
+                    }
+                }
             }
             a{
                 color: $plt-gray08;

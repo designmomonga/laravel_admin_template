@@ -1,0 +1,46 @@
+//色に関する変数群
+
+/*
+*カラーパレット
+*plt は paletteの略
+*/
+$plt-white: #fff;
+$plt-gray00: #fefefe;
+$plt-gray01: #f7f7f7;
+$plt-gray02: #e8e8e8;
+$plt-gray03: #c9c9c9;
+$plt-gray04: #b7b7b7;
+$plt-gray05: #a1a1a1;
+$plt-gray06: #898989;
+$plt-gray07: #727272;
+$plt-gray08: #595757;//デフォルト文字色
+$plt-gray09: #383635;
+
+/*
+* グローバルレイアウトのカラーエリア
+*/
+$color-globalBody-bg: $plt-gray00;
+$color-globalHeader-bg: $plt-gray01;
+$color-globalFooter-bg: $plt-gray01;
+$color-globalBody-txt: $plt-gray08;
+
+/*
+* アクセントカラーの設定
+*/
+
+//アクセントカラーのカラーバリエーション
+//赤系
+$plt-accent-red-main: #ff0000;
+$plt-accent-red-sub: #ffeeee;
+
+//緑系
+$plt-accent-green-main: #279a38;
+$plt-accent-green-sub: #f5fff3;
+
+//青系
+$plt-accent-blue-main: #0e7cb3;
+$plt-accent-blue-sub: #e2f0f5;
+
+//アクセントカラーのカラーエリア
+$color-accent-main: $plt-accent-blue-main;
+$color-accent-sub01: $plt-accent-blue-sub;

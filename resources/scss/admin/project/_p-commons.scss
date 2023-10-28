@@ -1,5 +1,12 @@
 @use "../global" as *;
 
+.p-page-header{
+    padding: 1rem 0 2rem 0;
+    @include pc{
+        font-size: 2.4rem;
+    }
+}
+
 //*----------------------------
 //グローバルナビゲーション
 //----------------------------*
@@ -12,10 +19,10 @@
                     background-color: $plt-gray00;
                     a{
                         &::before{
-                            background-color: red;
+                            background-color: $color-accent-main;
                         }
                         &::after{
-                            color: red;
+                            color: $color-accent-main;
                         }
                     }
                 }
@@ -50,12 +57,12 @@
     }
     &__current{
         @include pc{
-            background-color: #FEE;
+            background-color: $color-accent-sub01;
             &::before{
-                background-color: red!important;
+                background-color: $color-accent-main!important;
             }
             &::after{
-                color: red!important;
+                color: $color-accent-main!important;
             }
         }
     }
@@ -180,27 +187,6 @@
                         }
                     }
                 }
-            }
-        }
-    }
-}
-
-//*----------------------------
-//エラーメッセージ
-//----------------------------*
-.p-err{
-    margin-top: 20px;
-    padding: 2rem;
-    background-color: #FEE;
-    &__ttl{
-        color: #FFA5A5;
-    }
-    ul{
-        margin-top: 1rem;
-        li{
-            color: #FFA5A5;
-            &:not(:last-child){
-                padding-bottom: 3px;
             }
         }
     }

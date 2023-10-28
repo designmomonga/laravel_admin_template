@@ -26,7 +26,7 @@ Route::group(['middleware' => config('fortify.middleware', ['web'])], function (
 
     // Authentication...
     if ($enableViews) {
-        Route::get(RoutePath::for('login', '/front'), [AuthenticatedSessionController::class, 'create'])
+        Route::get(RoutePath::for('login', '/admin/login'), [AuthenticatedSessionController::class, 'create'])
             ->middleware(['guest:'.config('fortify.guard')])
             ->name('login');
     }
@@ -35,7 +35,7 @@ Route::group(['middleware' => config('fortify.middleware', ['web'])], function (
     $twoFactorLimiter = config('fortify.limiters.two-factor');
     $verificationLimiter = config('fortify.limiters.verification', '6,1');
 
-    Route::post(RoutePath::for('login', '/front'), [AuthenticatedSessionController::class, 'store'])
+    Route::post(RoutePath::for('login', '/admin/login'), [AuthenticatedSessionController::class, 'store'])
         ->middleware(array_filter([
             'guest:'.config('fortify.guard'),
             $limiter ? 'throttle:'.$limiter : null,
@@ -68,12 +68,12 @@ Route::group(['middleware' => config('fortify.middleware', ['web'])], function (
     // Registration...
     if (Features::enabled(Features::registration())) {
         if ($enableViews) {
-            Route::get(RoutePath::for('register', '/front/regist'), [RegisteredUserController::class, 'create'])
+            Route::get(RoutePath::for('register', '/admin/regist'), [RegisteredUserController::class, 'create'])
                 ->middleware(['guest:'.config('fortify.guard')])
                 ->name('register');
         }
 
-        Route::post(RoutePath::for('register', '/front/regist'), [RegisteredUserController::class, 'store'])
+        Route::post(RoutePath::for('register', '/admin/regist'), [RegisteredUserController::class, 'store'])
             ->middleware(['guest:'.config('fortify.guard')]);
     }
 

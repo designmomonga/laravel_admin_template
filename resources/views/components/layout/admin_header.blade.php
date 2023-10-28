@@ -1,6 +1,6 @@
 <header class="l-header">
     <div class="l-header__inner">
-        <p class="l-header__sys-name">{{ config('const_manager.SYS_NAME') }}</p>
+        <p class="l-header__sys-name">{{ config('const_admin.SYS_NAME') }}</p>
         <div class="l-header__info">
             <div class="l-header__profile">
                 <div class="l-header__profile--sp">
@@ -21,10 +21,21 @@
 		    </div>
         </div>  
         <div class="l-header__profile__menu">
+            <dl>
+                <dt>権限グループ</dt>
+                <dd>{{ Auth::user()->getRoleName() }}</dd>
+            </dl>
             <ul>
+                @can('admin-higher')
                 <li>
-                    <a href="{{ route('logout') }}">
-                        <i class="fa-solid fa-arrow-right-from-bracket arrow-right-form-bracket"></i><span>ログアウト</span>
+                    <a href="{{ route('admin.user.home') }}">
+                        <span>ユーザー管理</span>
+                    </a>
+                </li>
+                @endcan
+                <li>
+                    <a href="{{ route('logout') }}" class="l-logout">
+                        <span>ログアウト</span>
                     </a>
                 </li>
             </ul>

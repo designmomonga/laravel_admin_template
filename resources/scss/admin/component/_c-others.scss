@@ -1,5 +1,22 @@
 @use "../global" as *;
 
+//エラーメッセージ
+.c-error-message{
+    margin-top: 25px;
+    &__ttl{
+        color: #e81123;
+    }
+    ul{
+        margin-top: 1rem;
+        li{
+            color: #e81123;
+            &:not(:last-child){
+                padding-bottom: 3px;
+            }
+        }
+    }
+}
+
 //各ページのコンテンツを入れるパネルデザイン
 .c-content-panel{
     padding: 1rem;
