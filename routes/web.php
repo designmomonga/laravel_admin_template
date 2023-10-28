@@ -26,8 +26,7 @@ Route::get('/front', \App\Http\Controllers\Fronts\IndexController::class)->name(
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/admin', [\App\Http\Controllers\Admin\indexController::class, 'index'])->name('admin.home');
-    //↓管理者権限以上のユーザーに制限するルーティング
-    Route::group(['middleware' => ['can:admin-higher']], function() {
-        Route::get('/admin/users', \App\Http\Controllers\Admin\Users\indexController::class)->name('admin.user.home');
-    });
+});
+Route::group(['middleware' => ['auth', 'can:admin-higher']], function() {
+    Route::get('/admin/users', \App\Http\Controllers\Admin\Users\indexController::class)->name('admin.user.home');
 });
