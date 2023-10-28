@@ -25,8 +25,9 @@ Route::get('/front', \App\Http\Controllers\Fronts\IndexController::class)->name(
 //Route::get('/front/regist', \App\Http\Controllers\Fronts\RegisterController::class)->name('front.regist');
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/admin', [\App\Http\Controllers\Admin\indexController::class, 'index'])->name('admin.home');
-});
-Route::group(['middleware' => ['can:admin-higher']], function() {
-    Route::get('/admin/users', \App\Http\Controllers\Admin\Users\indexController::class)->name('admin.user.home');
+    Route::get('/admin', [\App\Http\Controllers\Admin\IndexController::class, 'index'])->name('admin.home');
+    //↓ロール権限で閲覧を許可するルーティング
+    Route::group(['middleware' => ['can:admin-higher']], function() {
+        Route::get('/admin/users', \App\Http\Controllers\Admin\Users\IndexController::class)->name('admin.user.home');
+    });
 });
