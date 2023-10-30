@@ -14,22 +14,35 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => 'System Master',
-            'email' => 'system.master@design-momonga.jp',
+            'last_name' => 'System',
+            'first_name' => 'Master',
+            'last_name_kana' => 'しすてむ',
+            'first_name_kana' => 'ますたー',
+            'email' => 'master@design-momonga.jp',
             'password' => 'password',
             'role_id' => '1',
+            'user_status_id' => '1',
         ]);
         User::create([
-            'name' => '管理者',
+            'last_name' => 'Taylor',
+            'first_name' => 'Otwell',
+            'last_name_kana' => 'ていらー',
+            'first_name_kana' => 'おっとうぇる',
             'email' => 'admin@design-momonga.jp',
             'password' => 'password',
             'role_id' => '2',
+            'user_status_id' => '1',
         ]);
         User::create([
-            'name' => '一般',
+            'last_name' => 'Rasmus',
+            'first_name' => 'Lerdorf',
+            'last_name_kana' => 'らすます',
+            'first_name_kana' => 'らーどふ',
             'email' => 'user@design-momonga.jp',
             'password' => 'password',
             'role_id' => '3',
+            'user_status_id' => '2',
         ]);
+      
     }
 }

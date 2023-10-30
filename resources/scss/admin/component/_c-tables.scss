@@ -1,0 +1,22 @@
+@use "../global" as *;
+
+/*
+* テーブル
+*/
+
+.c-list-tbl{
+    width: 100%;
+    background-color: #FFF;
+    border: 1px solid $plt-gray02;
+    th,td{
+        padding: 1.2rem;
+    }
+    th{
+        background-color: $plt-gray01;
+    }
+}
+
+//行
+.c-row-even{
+    background-color: $plt-gray01;
+}

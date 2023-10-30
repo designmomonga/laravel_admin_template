@@ -12,8 +12,34 @@ button[type=submit].c-btn__submit{
     border-radius: 3px;
     cursor: pointer;
 }
-
+//ボタン
+.c-btn__normal{
+    display: inline-block;
+    padding: 1rem 1rem .6rem;
+    text-align: center;
+    background-color: $plt-gray02;
+    color: $plt-gray08;
+    white-space: nowrap;
+    @include tab{
+        padding: 1rem 2.5rem .6rem;
+    }
+}
+//角丸
+.c-btn__round-corner--3{
+    border-radius: 3px!important;
+}
+.c-btn__round-corner--5{
+    border-radius: 5px!important;
+}
 //ボタンカラーバリエーション
+
+.c-btn__color--default{
+    background-color: $color-accent-main;
+    color: #FFF;
+    &:hover{
+        opacity: .85;
+    }
+}
 .c-btn__color--gray{
     background-color: $plt-gray03;
     color:  $plt-gray07;
@@ -25,28 +51,35 @@ button[type=submit].c-btn__submit{
     background-color: #057b36;
     color: #fff;
     &:hover{
-        background-color: #21a859;
+        opacity: .85;
     }
 }
 .c-btn__color--red{
-    background-color: #ef1843;
+    background-color: #df0833;
     color: #fff;
     &:hover{
-        background-color: #ed3f62;
+        opacity: .85;
     }
 }
 .c-btn__color--blue{
     background-color: #0067b8;
     color: #fff;
     &:hover{
-        background-color: #005da6;
+        opacity: .85;
+    }
+}
+.c-btn__color--dark-blue{
+    background-color: #185b7d;
+    color: #fff;
+    &:hover{
+        opacity: .85;
     }
 }
 .c-btn__color--laravel{
     background-color: #ff2d20;
     color: #FFF;
     &:hover{
-        background-color: #fd5047;
+        opacity: .85;
     }
 }
 

@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-       //roleカラムを外部キーとしてpasswordカラムの後に追加。更にインデックスを付与。
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('role_id')->default(0)->after('password')->index('index_role')->comment('ロール');
+            $table->dropColumn('name');
         });
     }
 
@@ -23,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('role_id');
-          });
+            $table->string('name')->nullable(false);
+        });
     }
 };

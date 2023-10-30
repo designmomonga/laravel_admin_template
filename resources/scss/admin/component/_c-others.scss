@@ -29,3 +29,22 @@
     justify-content: center;
     align-items: center;
 }
+
+//フォームのレイアウト
+.c-hissu{
+    display: inline-block;
+    padding: .3rem .7rem .08rem;
+    font-size: 1rem;
+    border: 1px solid #e81123;
+    color: #e81123;
+    margin-left: 5px;
+}
+.c-form-layout--01{
+    dt{
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+    dd{
+        margin-bottom: 20px;
+    }
+}

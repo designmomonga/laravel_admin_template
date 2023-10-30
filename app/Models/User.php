@@ -26,6 +26,14 @@ class User extends Authenticatable
     }
 
     /**
+     * ユーザーに関連するステータス情報を取得
+     */
+    public function userStatus()
+    {
+        return $this->belongsTo(UserStatus::class);
+    }
+    
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>

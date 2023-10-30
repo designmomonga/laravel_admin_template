@@ -1,0 +1,41 @@
+@use "../global" as *;
+
+/*
+* 汎用クラス
+*/
+
+.u-mb{
+    margin-bottom: 30px;
+}
+.u-mb-xsmall{
+    margin-bottom: 10px;
+}
+.u-mb-small{
+    margin-bottom: 20px;
+}
+.u-mb-large{
+    margin-bottom: 40px;
+}
+.u-mb--xlarge{
+    margin-bottom: 50px;
+}
+
+.u-txt-c{
+    text-align: center;
+}
+.u-txt-l{
+    text-align: left;
+}
+.u-txt-r{
+    text-align: right;
+}
+
+.u-tbl-cell-none{
+    //スマートフォン非表示
+    &-sp{
+        display: none;
+        @include pc{
+            display: table-cell;
+        }
+    }
+}

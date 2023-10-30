@@ -29,5 +29,7 @@ Route::group(['middleware' => ['auth']], function() {
     //↓ロール権限で閲覧を許可するルーティング
     Route::group(['middleware' => ['can:admin-higher']], function() {
         Route::get('/admin/users', \App\Http\Controllers\Admin\Users\IndexController::class)->name('admin.user.home');
+        Route::get('/admin/users/create', \App\Http\Controllers\Admin\Users\CreateController::class)->name('admin.user.create');
+        Route::get('/admin/users/update', \App\Http\Controllers\Admin\Users\UpdateController::class)->name('admin.user.update');
     });
 });

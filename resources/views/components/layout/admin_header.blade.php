@@ -10,7 +10,7 @@
             <div class="l-header__profile l-header__profile--pc">
                 <div class="l-header__profile--pc">
                     <i class="fa-solid fa-user user-icon"></i>
-                    <span>{{ Auth::user()->name }}</span>
+                    <span>{{ Auth::user()->last_name }}&nbsp;{{ Auth::user()->first_name}}</span>
                     <i class="fa-solid fa-caret-down caret-down-icon"></i>
                 </div>
             </div>
