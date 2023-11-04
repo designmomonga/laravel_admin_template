@@ -14,7 +14,7 @@ class IndexController extends Controller
     public function __invoke(Request $request)
     {
         //ユーザーリストを取得
-        $users = User::with('role', 'userStatus')->get();
+        $users = User::with('role', 'userStatus')->get()->where('role_id', '>', '1');
         //dd($users);
         return view('admin.user_list', ['users' => $users]);
     }

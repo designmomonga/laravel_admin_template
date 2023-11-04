@@ -20,6 +20,25 @@
     margin-bottom: 50px;
 }
 
+.u-mt{
+    margin-top: 30px;
+}
+.u-mt-xxsmall{
+    margin-top: 5px;
+}
+.u-mt-xsmall{
+    margin-top: 10px;
+}
+.u-mt-small{
+    margin-top: 20px;
+}
+.u-mt-large{
+    margin-top: 40px;
+}
+.u-mt--xlarge{
+    margin-top: 50px;
+}
+
 .u-txt-c{
     text-align: center;
 }
@@ -28,6 +47,15 @@
 }
 .u-txt-r{
     text-align: right;
+}
+
+.u-err__title{
+    padding: 1.2rem;
+    background-color: rgb(255 235 235);
+    color: #ff0000;
+}
+.u-err__txt{
+    color: red;
 }
 
 .u-tbl-cell-none{

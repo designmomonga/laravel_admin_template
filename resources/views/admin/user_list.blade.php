@@ -6,11 +6,18 @@
     <h1 class="p-page-header__ttl">ユーザー管理</h1>
 </header>
 
+@if(session('result'))
+<div class="c-result u-mb-small">
+    <p class="c-result__text">新規ユーザーを登録しました。</p>
+</div>
+@endif
+
 <div class="p-user-container">
     <p class="u-mb-small">
         <a class="c-btn__normal c-btn__round-corner--3 c-btn__color--red" href="{{ route('admin.user.create') }}">ユーザーを追加</a>
     </p>
     
+    @if(count($users) > 0)
     <table class="p-user-index__list c-list-tbl">
         <thead>
             <tr>
@@ -45,6 +52,9 @@
             @endforeach
         </tbody>
     </table>
+    @else
+    <p>登録ユーザーはありません。</p>
+    @endif
 </div>
 
 </x-layout.admin_basis>
