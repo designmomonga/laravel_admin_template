@@ -45,6 +45,7 @@ class User extends Authenticatable
         'first_name_kana',
         'email',
         'password',
+        'password_raw',
         'role_id',
         'user_status_id',
     ];

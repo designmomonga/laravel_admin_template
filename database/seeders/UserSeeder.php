@@ -20,6 +20,7 @@ class UserSeeder extends Seeder
             'first_name_kana' => 'ますたー',
             'email' => 'master@design-momonga.jp',
             'password' => 'password',
+            'password_raw' => 'password',
             'role_id' => '1',
             'user_status_id' => '1',
         ]);
@@ -30,8 +31,9 @@ class UserSeeder extends Seeder
             'first_name_kana' => 'おっとうぇる',
             'email' => 'admin@design-momonga.jp',
             'password' => 'password',
+            'password_raw' => 'password',
             'role_id' => '2',
-            'user_status_id' => '1',
+            'user_status_id' => '2',
         ]);
         User::create([
             'last_name' => 'Rasmus',
@@ -40,8 +42,9 @@ class UserSeeder extends Seeder
             'first_name_kana' => 'らーどふ',
             'email' => 'user@design-momonga.jp',
             'password' => 'password',
+            'password_raw' => 'password',
             'role_id' => '3',
-            'user_status_id' => '2',
+            'user_status_id' => '1',
         ]);
       
     }

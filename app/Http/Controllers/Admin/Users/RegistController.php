@@ -16,9 +16,12 @@ class RegistController extends Controller
     public function __invoke(UserCreateRequest $request)
     {
         $user = new User;
+        $user->password_raw = $request->password;//入力されたパスワードをハッシュ化しないで別のカラムに保存しておく
         $form = $request->all();
         unset($form['_token']);
         $user->fill($form)->save();
-        return redirect(route('admin.user.home'))->with('result', '新規ユーザーを登録しました。');
+        return redirect()
+            ->route('admin.user.home')
+            ->with(['result' => '新規ユーザーを登録しました。', 'result_type' => 'reg']);
     }
 }

@@ -6,11 +6,7 @@
     <h1 class="p-page-header__ttl">ユーザー管理</h1>
 </header>
 
-@if(session('result'))
-<div class="c-result u-mb-small">
-    <p class="c-result__text">新規ユーザーを登録しました。</p>
-</div>
-@endif
+<x-result_message></x-result_message>
 
 <div class="p-user-container">
     <p class="u-mb-small">
@@ -44,7 +40,7 @@
                 <td class="u-tbl-cell-none-sp">{{ $user->role->role_name }}</td>
                 <td class="u-txt-c">{{ $user->userStatus->status_name }}</td>
                 <td class="u-txt-c">
-                    <a class="c-btn__normal c-btn__round-corner--3 c-btn__color--gray" href="{{ route('admin.user.update', ['userId' => $user->id]) }}">
+                    <a class="c-btn__normal c-btn__round-corner--3 c-btn__color--gray" href="{{ route('admin.user.edit', ['userId' => $user->id]) }}">
                         編集
                     </a>
                 </td>

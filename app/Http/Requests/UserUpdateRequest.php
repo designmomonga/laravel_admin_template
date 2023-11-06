@@ -4,9 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Password;
-use Illuminate\Validation\Rule;
 
-class UserCreateRequest extends FormRequest
+class UserUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,12 +22,14 @@ class UserCreateRequest extends FormRequest
      */
     public function rules(): array
     {
+        // 入力内容を変数に代入
+        $input = $this->input();
         return [
             'last_name' => 'required',
             'first_name' => 'required',
             'last_name_kana' => 'required|hiragana',
             'first_name_kana' => 'required|hiragana',
-            'email' => 'required|email|unique:users,email',
+            'email' => 'required|email|unique:users,email,' . $input['id'] . ',id',
             'password' => ['required', 'alphabet_num_dash', Password::min(8)->numbers()],
         ];
     }
@@ -44,7 +45,7 @@ class UserCreateRequest extends FormRequest
             'first_name_kana.hiragana' => 'ひらがなで入力して下さい。',
             'email.required' => '入力必須項目です。',
             'email.email' => 'メールアドレスの書式が正しくありません。',
-            'email.unique' => 'そのメールアドレスは既に使用されています。',
+            'email.unique' => 'そのメールアドレスは既に使用中です。',
             'password.required' => '入力必須項目です。',
             'password.alphabet_num_dash' => '英数字です。',
         ];

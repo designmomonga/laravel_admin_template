@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('first_name')->after('last_name');
             $table->string('last_name_kana')->after('first_name');
             $table->string('first_name_kana')->after('last_name_kana');
-            $table->unsignedBigInteger('role_id')->default(0)->after('password');
+            $table->string('password_raw')->after('password');
+            $table->unsignedBigInteger('role_id')->default(0)->after('password_raw');
             $table->unsignedBigInteger('user_status_id')->default(0)->after('role_id');
         });
     }
@@ -31,6 +32,7 @@ return new class extends Migration
             $table->dropColumn('first_name');
             $table->dropColumn('last_name_kana');
             $table->dropColumn('first_name_kana');
+            $table->dropColumn('password_raw');
             $table->dropColumn('role_id');
             $table->dropColumn('user_status_id');
         });

@@ -43,8 +43,22 @@
     dt{
         font-weight: 600;
         margin-bottom: 5px;
+        color: $plt-gray04;
     }
     dd{
         margin-bottom: 20px;
+    }
+}
+
+//処理結果コメント表示用（フラッシュデータ)
+.c-result__text{
+    &--reg{
+        color: #9cc40c;
+    }
+    &--pull{
+        color: #09b4d0;
+    }
+    &--del{
+        color: #df0833;
     }
 }

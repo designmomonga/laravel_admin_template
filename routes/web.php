@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/admin/users', \App\Http\Controllers\Admin\Users\IndexController::class)->name('admin.user.home');
         Route::get('/admin/users/create', \App\Http\Controllers\Admin\Users\CreateController::class)->name('admin.user.create');
         Route::post('/admin/users/create', \App\Http\Controllers\Admin\Users\RegistController::class)->name('admin.user.regist');
-        Route::get('/admin/users/update', \App\Http\Controllers\Admin\Users\UpdateController::class)->name('admin.user.update');
+        Route::get('/admin/users/edit', \App\Http\Controllers\Admin\Users\EditController::class)->name('admin.user.edit');
+        Route::put('/admin/users/edit', \App\Http\Controllers\Admin\Users\UpdateController::class)->name('admin.user.update');
     });
 });
