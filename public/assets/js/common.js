@@ -119,5 +119,19 @@ $(function(){
             }
         });
     }
+
+    /*
+    * チェックボックスによるパスワード欄の表示非表示
+    --------------------------------------------------------*/
+
+    $('input[type=checkbox].js-pw-display').change(function(){
+        if($(this).prop('checked')){
+            //alert('チェック済み');
+            $('#password').attr('type', 'text')
+        }else{
+            //alert('未チェック');
+            $('#password').attr('type', 'password')
+        }
+    });
 	
 });

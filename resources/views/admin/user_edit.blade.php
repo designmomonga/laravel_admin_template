@@ -59,9 +59,12 @@
                 <p class="u-err__txt u-mt-xxsmall">{{ $message }}</p>
                 @enderror
             </dd>
-            <dt>パスワード</dt>
+            <dt>パスワード（8文字以上、数字を含む）</dt>
             <dd>
-                <input type="password" name="password" value="{{ $user->password_raw }}">
+                <input type="password" name="password" id="password" value="{{ $user->password_raw }}">
+                <div class="u-mt-xxsmall">
+                    <label><input type="checkbox" class="js-pw-display"><span>パスワードを表示</span></label>
+                </div>
                 @error('password')
                 <p class="u-err__txt u-mt-xxsmall">{{ $message }}</p>
                 @enderror

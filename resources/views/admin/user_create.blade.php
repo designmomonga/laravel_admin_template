@@ -53,7 +53,7 @@
                 <p class="u-err__txt u-mt-xxsmall">{{ $message }}</p>
                 @enderror
             </dd>
-            <dt>パスワード<span class="c-hissu">必須</span></dt>
+            <dt>パスワード（8文字以上、数字を含む）<span class="c-hissu">必須</span></dt>
             <dd>
                 <input type="text" name="password">
                 @error('password')

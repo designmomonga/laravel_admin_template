@@ -4,6 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Password;
+use App\Models\User;
+use Illuminate\Validation\Rule;
 
 class UserUpdateRequest extends FormRequest
 {
@@ -29,7 +31,8 @@ class UserUpdateRequest extends FormRequest
             'first_name' => 'required',
             'last_name_kana' => 'required|hiragana',
             'first_name_kana' => 'required|hiragana',
-            'email' => 'required|email|unique:users,email,' . $input['id'] . ',id',
+            //'email' => 'required|email|unique:users,email,' . $input['id'] . ',id',
+            'email' => ['required', 'email', Rule::unique('users')->ignore($this->id)->whereNull('deleted_at')],
             'password' => ['required', 'alphabet_num_dash', Password::min(8)->numbers()],
         ];
     }

@@ -28,7 +28,8 @@ class UserCreateRequest extends FormRequest
             'first_name' => 'required',
             'last_name_kana' => 'required|hiragana',
             'first_name_kana' => 'required|hiragana',
-            'email' => 'required|email|unique:users,email',
+            //'email' => 'required|email|unique:users,email',
+            'email' => ['required', 'email', Rule::unique('users', 'email')->whereNull('deleted_at')],
             'password' => ['required', 'alphabet_num_dash', Password::min(8)->numbers()],
         ];
     }

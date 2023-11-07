@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password_raw')->after('password');
             $table->unsignedBigInteger('role_id')->default(0)->after('password_raw');
             $table->unsignedBigInteger('user_status_id')->default(0)->after('role_id');
+            $table->softDeletes()->after('remember_token');
         });
     }
 
@@ -35,6 +36,7 @@ return new class extends Migration
             $table->dropColumn('password_raw');
             $table->dropColumn('role_id');
             $table->dropColumn('user_status_id');
+            $table->dropColumn('deleted_at');
         });
     }
 };

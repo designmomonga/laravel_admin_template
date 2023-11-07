@@ -70,6 +70,7 @@ input[type=email] {
     box-sizing: border-box;
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
   }
   select.minimal {
     background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
@@ -108,4 +109,15 @@ input[type=email] {
   //↓Microsoft Edgeのinput type=password においてデフォルトで表示される文字表示ボタンを非表示にする
   ::-ms-reveal {
     display: none;
+}
+input[type=checkbox]{
+    vertical-align: middle;
+}
+label{
+    span{
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: 4px;
+        margin-left: 2px;
+    }
 }

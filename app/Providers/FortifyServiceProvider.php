@@ -34,10 +34,10 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
 
-        //認証項目を追加しています。（ステータスID）
+        //認証項目を追加。（ステータスIDとソフトデリート）
         Fortify::authenticateUsing(function (Request $request) {
-            $user = User::where('email', $request->email)->first();
-            if ($user && ($user->user_status_id == '1')) {
+            $user = User::where('email', '=', $request->email)->whereNull('deleted_at')->first();
+            if ($user && ($user->user_status_id == '1') && password_verify($request->password, $user->password)) {
                 return $user;
             }
             return null;
@@ -57,6 +57,7 @@ class FortifyServiceProvider extends ServiceProvider
         //     return view('front.register');
         // });
         
+        //ログイン画面のView指定
         Fortify::loginView(function () {
             return view('admin.login');
         });
