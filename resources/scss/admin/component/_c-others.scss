@@ -50,6 +50,22 @@
     }
 }
 
+//icon系
+.c-icon{
+    &__check{
+        margin-right: 7px;
+        font-size: 1.6rem;
+        @include pc{
+            font-size: 2rem;
+        }
+    }
+    &--green{
+        color: #9cc40c;
+    }
+    &--red{
+        color: #df0833;
+    }
+}
 //処理結果コメント表示用（フラッシュデータ)
 .c-result__text{
     &--reg{

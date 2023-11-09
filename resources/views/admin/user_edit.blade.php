@@ -19,11 +19,11 @@
 @endif
 
 <div class="p-new-user">
-    <form action="{{ route('admin.user.update') }}" method="post">
+    <form action="{{ route('admin.user.update') }}" method="post" class="u-mb">
         @csrf
         @method('PUT')
         <input type="hidden" name="id" value="{{ $user->id }}">
-        <dl class="p-user__register c-form-layout--01 u-mb-small">
+        <dl class="p-user__register c-form-layout--01 u-mb">
             <dt>ユーザー名（姓）</dt>
             <dd>
                 <input type="text" name="last_name" value="{{ $user->last_name }}" placeholder="姓">
@@ -98,6 +98,22 @@
             <button type="submit" class="c-btn__submit c-btn__color--red">更新</button>
         </p>
     </form>
+    <p class="u-txt-r js-modal__open">
+        <span class="c-btn__delete"><i class="fa-regular fa-trash-can"></i>データの削除</span>
+    </p>
 </div>
+
+<x-slot name="modal_name">user-delete</x-slot>
+<x-slot name="modal_content">
+    <form action="{{ route('admin.user.edit') }}" method="post">
+        @csrf
+        @method('DELETE')
+        <input type="hidden" name="id" value="{{ $user->id }}">
+        <p class="u-mb-small u-txt-c"><i class="fa-solid fa-check c-icon__check c-icon--red"></i>データを削除してもよろしいですか？</p>
+        <p class="btn__layouter u-txt-c">
+            <button type="submit" class="c-btn__submit c-btn__color--red">削除</button>
+        </p>
+    </form>
+</x-slot>
 
 </x-layout.admin_basis>

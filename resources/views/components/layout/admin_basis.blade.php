@@ -11,5 +11,10 @@
     </div>
 </div>
 <x-layout.admin_footer></x-layout.admin_footer>
-
-</x-layout.front_base>
+@isset($modal_name)
+<x-modal>
+    <x-slot name="modal_name">{{ $modal_name }}</x-slot>
+    {{ $modal_content }}
+</x-modal>
+@endisset
+</x-layout.admin_foundation>

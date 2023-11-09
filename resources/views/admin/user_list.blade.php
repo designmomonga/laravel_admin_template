@@ -40,7 +40,7 @@
                 <td class="u-tbl-cell-none-sp">{{ $user->role->role_name }}</td>
                 <td class="u-txt-c">{{ $user->userStatus->status_name }}</td>
                 <td class="u-txt-c">
-                    <a class="c-btn__normal c-btn__round-corner--3 c-btn__color--gray" href="{{ route('admin.user.edit', ['userId' => $user->id]) }}">
+                    <a class="c-btn__normal c-btn__round-corner--3 c-btn__color--blue" href="{{ route('admin.user.edit', ['userId' => $user->id]) }}">
                         編集
                     </a>
                 </td>

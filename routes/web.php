@@ -33,5 +33,6 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('/admin/users/create', \App\Http\Controllers\Admin\Users\RegistController::class)->name('admin.user.regist');
         Route::get('/admin/users/edit', \App\Http\Controllers\Admin\Users\EditController::class)->name('admin.user.edit');
         Route::put('/admin/users/edit', \App\Http\Controllers\Admin\Users\UpdateController::class)->name('admin.user.update');
+        Route::delete('/admin/users/edit', \App\Http\Controllers\Admin\Users\DeleteController::class)->name('admin.user.delete');
     });
 });

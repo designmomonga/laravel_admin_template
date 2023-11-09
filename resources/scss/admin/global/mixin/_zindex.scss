@@ -5,10 +5,11 @@
 ------------------------------------*/
 
 $layer: (
-  hamburger: 9999,
-  crossmark: 9999,
-  gnav: 9998,
-  header: 9997
+  modal: 9999,
+  hamburger: 9998,
+  crossmark: 9998,
+  gnav: 9997,
+  header: 9996,
 );
 
 @mixin z-index($key) {

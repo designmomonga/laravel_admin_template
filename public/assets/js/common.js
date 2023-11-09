@@ -133,5 +133,15 @@ $(function(){
             $('#password').attr('type', 'password')
         }
     });
+
+    /*
+    * モーダルウインド表示・非表示
+    --------------------------------------------------------*/
+    $('.js-modal__open').on('click', function(){
+        $('.c-modal').fadeIn();
+    });
+    $('.js-modal__close').on('click', function(){
+        $('.c-modal').fadeOut();
+    });
 	
 });
